@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista Produzioni</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .production {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Produzioni</h1>
+    <div id="productions"></div>
+
+    <script>
+      const productions = [
+        { title: "Film A", language: "Inglese", rating: 8, genre: "Azione" },
+        { title: "Film B", language: "Italiano", rating: 7, genre: "Commedia" },
+      ];
+
+      function showProductions() {
+        const container = document.getElementById("productions");
+        productions.forEach((prod) => {
+          const prodDiv = document.createElement("div");
+          prodDiv.className = "production";
+          prodDiv.innerHTML = `
+                    <h2>${prod.title}</h2>
+                    <p>Lingua: ${prod.language}</p>
+                    <p>Voto: ${prod.rating}</p>
+                    <p>Genere: ${prod.genre}</p>
+                `;
+          container.appendChild(prodDiv);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", showProductions);
+    </script>
+  </body>
+</html>
